@@ -1,0 +1,98 @@
+<section class="mx-10">
+  <h1 class="text-3xl">{{country().name}}</h1>
+  <h2 class="text-xl font-thin">
+    Población {{country().population | number}}
+  </h2>
+</section>
+
+
+  <section class="stats shadow mx-5">
+    <div class="stat">
+      <div class="stat-figure text-secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          class="inline-block h-8 w-8 stroke-current">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+      </div>
+      <div class="stat-title">Población</div>
+      <div class="stat-value">{{ country().population | number }} </div>
+      <div class="stat-desc">Desde {{currentYear()}}</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure text-secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          class="inline-block h-8 w-8 stroke-current">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4"></path>
+        </svg>
+      </div>
+      <div class="stat-title">{{country().name}}</div>
+      <div class="stat-value">{{country().region}}</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure text-secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          class="inline-block h-8 w-8 stroke-current">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+        </svg>
+      </div>
+      <div class="stat-title">Sub Región</div>
+      <div class="stat-value">{{country().subRegion}}</div>
+      <div class="stat-desc">{{country().region}}</div>
+    </div>
+
+    <div class="stat">
+      <div class="stat-figure text-secondary">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 24 24"
+          class="inline-block h-8 w-8 stroke-current">
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 8h14M5 8a2 2 0 110-4h14a2 2 0 110 4M5 8v10a2 2 0 002 2h10a2 2 0 002-2V8m-9 4h4"></path>
+        </svg>
+      </div>
+      <div class="stat-title">Bandera</div>
+      <div class="stat-value">{{  country().flag}}</div>
+      <div class="stat-desc">{{country().subRegion}}</div>
+    </div>
+  </section>
+
+
+<section class="diff aspect-[16/9]">
+  <div class="diff-item-1">
+    <img [alt]="country().name" [src]="country().flagSvg" />
+  </div>
+  <div class="diff-item-2">
+    <img
+      class="blur brightness-75"
+      [alt]="country().name"
+      [src]="country().flagSvg" />
+  </div>
+  <div class="diff-resizer"></div>
+</section>
